@@ -6,7 +6,7 @@ This is a minimal ERC20 Token based on OpenZeppelin contracts that is "capped, m
 Deployment flow is as follows:
 1) A copy of Contract NiftexERC20 is deployed
 
-2) A copy of Contract NiftexERC20Factory is deployed, with the address of the above contract as the constructor
+2) A copy of Contract NiftexERC20Factory is deployed, with the address of the above contract as the constructor argument
 
 3) Any additional ERC20 contracts can be deployed by the owner of the contract created in step (2), by calling function "deploy" with appropriate arguments
 (as implemented these are the token name, symbol, max number of tokens i.e. "mintLimit", and the desired owner of the new contract, although the contract can easily be modified to include more arguments)
