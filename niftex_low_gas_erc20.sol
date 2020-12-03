@@ -371,7 +371,7 @@ abstract contract Context {
 }
 
 //MODIFIED version of https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.1.0/contracts/token/ERC20/ERC20.sol
-//with constructor removed, _name, _symbol, and _decimals all made public
+//with constructor removed, _name, _symbol, and _decimals all changed to internal from private to allow assignment in derived contract
 contract ERC20 is Context, IERC20 {
     using SafeMath for uint256;
     using Address for address;
@@ -382,9 +382,9 @@ contract ERC20 is Context, IERC20 {
 
     uint256 private _totalSupply;
 
-    string public _name;
-    string public _symbol;
-    uint8 public _decimals;
+    string internal _name;
+    string internal _symbol;
+    uint8 internal _decimals;
 
     /**
      * @dev Returns the name of the token.
@@ -712,9 +712,9 @@ abstract contract Pausable is Context {
 
 
 //MODIFIED version of https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol
-//with constructor removed, _owner made public
+//with constructor removed, _owner changed to internal from private to allow assignment in derived contract
 abstract contract Ownable is Context {
-    address public _owner;
+    address internal _owner;
 
     event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
     /**
